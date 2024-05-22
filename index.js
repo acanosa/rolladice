@@ -28,8 +28,8 @@ app.post("/roll", function(req, res) {
         return;
     } else {
         var responseBody = { "results": []}
-        
         for (var i = 0; i < facesList.length; i++) {
+            
             var diceResult = diceLib.rollTheDice(facesList[i], i + 1);
             responseBody.results.push(diceResult);
         }
