@@ -4,15 +4,17 @@ const diceLib = require("./dice");
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const PORT = 3001;
 const options = {
     origin: "http://localhost:3000"
 };
 app.use(cors(options));
 app.use(express.json());
-app.listen(3001, () => {
-    console.log("Server running on port 3001");
+app.listen(PORT, () => {
+    console.log("Server running on port " + PORT);
 });
-app.get("/", function (_1, res) {
+//Using underscore in front of the param name to pass the unusedParam check
+app.get("/", function (_req, res) {
     res.send("Roll a dice! execute POST /roll with your desired preferences to roll any dice you want up to D1000");
 });
 app.post("/roll", function (req, res) {

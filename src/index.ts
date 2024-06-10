@@ -16,7 +16,7 @@ app.use(cors(options))
 app.use(express.json())
 
 app.listen(PORT,  () => {
-    console.log("Server running on port `PORT`")
+    console.log("Server running on port " + PORT)
 })
 
 //Using underscore in front of the param name to pass the unusedParam check
